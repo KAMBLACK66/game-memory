@@ -39,12 +39,18 @@ body {
 .div1 {
   grid-area: 1 / 1 / 2 / 3;
   padding-top: 10px;
+  display: flex;
+  justify-content: center;
 }
 .div2 {
   grid-area: 2 / 1 / 5 / 2;
+  display: flex;
+  justify-content: end;
 }
 .div3 {
   grid-area: 2 / 2 / 3 / 3;
+  display: flex;
+  justify-content: center;
 }
 .div4 {
   grid-area: 3 / 2 / 4 / 3;
@@ -57,7 +63,7 @@ body {
 .div5 {
   grid-area: 4 / 2 / 5 / 3;
   display: flex;
-  justify-content: center
+  justify-content: center;
 }
 button {
   height: 100px;
