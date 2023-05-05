@@ -1,0 +1,367 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap");
+:root {
+  --bg: #000000;
+  --clr-1: #00c2ff;
+  --clr-2: #33ff8c;
+  --clr-3: #ffc640;
+  --clr-4: #e54cff;
+
+  --blur: 1rem;
+  --fs: clamp(3rem, 8vw, 7rem);
+  --ls: clamp(-1.75px, -0.25vw, -3.5px);
+}
+*,
+*::before,
+*::after {
+  font-family: inherit;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: rgb(6, 6, 6);
+  display: flex;
+  min-height: 80vh;
+  place-items: center;
+  justify-content: center;
+  font-family: "Inter", "DM Sans", Arial, sans-serif;
+  color: #fff;
+}
+/* Grid */
+.parent {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  height: 100vh;
+}
+.div1 {
+  grid-area: 1 / 1 / 2 / 3;
+  padding-top: 10px;
+}
+.div2 {
+  grid-area: 2 / 1 / 5 / 2;
+}
+.div3 {
+  grid-area: 2 / 2 / 3 / 3;
+}
+.div4 {
+  grid-area: 3 / 2 / 4 / 3;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  height: 20px;
+}
+.div5 {
+  grid-area: 4 / 2 / 5 / 3;
+  display: flex;
+  justify-content: center
+}
+button {
+  height: 100px;
+  width: 100px;
+  font-size: 40px;
+  color: black;
+  font-weight: bold;
+}
+button:hover {
+  cursor: pointer;
+}
+.content {
+  text-align: center;
+}
+.title {
+  font-size: var(--fs);
+  font-weight: 800;
+  letter-spacing: var(--ls);
+  position: relative;
+  overflow: hidden;
+  background: var(--bg);
+  margin: 0;
+}
+.aurora {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  mix-blend-mode: darken;
+  pointer-events: none;
+}
+.aurora__item {
+  overflow: hidden;
+  position: absolute;
+  width: 60vw;
+  height: 60vw;
+  background-color: var(--clr-1);
+  border-radius: 37% 29% 27% 27% / 28% 25% 41% 37%;
+  filter: blur(var(--blur));
+  mix-blend-mode: overlay;
+}
+.aurora__item:nth-of-type(1) {
+  top: -50%;
+  animation: aurora-border 6s ease-in-out infinite,
+    aurora-1 12s ease-in-out infinite alternate;
+}
+.aurora__item:nth-of-type(2) {
+  background-color: var(--clr-3);
+  right: 0;
+  top: 0;
+  animation: aurora-border 6s ease-in-out infinite,
+    aurora-2 12s ease-in-out infinite alternate;
+}
+.aurora__item:nth-of-type(3) {
+  background-color: var(--clr-2);
+  left: 0;
+  bottom: 0;
+  animation: aurora-border 6s ease-in-out infinite,
+    aurora-3 8s ease-in-out infinite alternate;
+}
+.aurora__item:nth-of-type(4) {
+  background-color: var(--clr-4);
+  right: 0;
+  bottom: -50%;
+  animation: aurora-border 6s ease-in-out infinite,
+    aurora-4 24s ease-in-out infinite alternate;
+}
+@keyframes aurora-1 {
+  0% {
+    top: 0;
+    right: 0;
+  }
+  50% {
+    top: 100%;
+    right: 75%;
+  }
+  75% {
+    top: 100%;
+    right: 25%;
+  }
+  100% {
+    top: 0;
+    right: 0;
+  }
+}
+@keyframes aurora-2 {
+  0% {
+    top: -50%;
+    left: 0%;
+  }
+  60% {
+    top: 100%;
+    left: 75%;
+  }
+  85% {
+    top: 100%;
+    left: 25%;
+  }
+  100% {
+    top: -50%;
+    left: 0%;
+  }
+}
+@keyframes aurora-3 {
+  0% {
+    bottom: 0;
+    left: 0;
+  }
+  40% {
+    bottom: 100%;
+    left: 75%;
+  }
+  65% {
+    bottom: 40%;
+    left: 50%;
+  }
+  100% {
+    bottom: 0;
+    left: 0;
+  }
+}
+@keyframes aurora-4 {
+  0% {
+    bottom: -50%;
+    right: 0;
+  }
+  50% {
+    bottom: 0%;
+    right: 40%;
+  }
+  90% {
+    bottom: 50%;
+    right: 25%;
+  }
+  100% {
+    bottom: -50%;
+    right: 0;
+  }
+}
+@keyframes aurora-border {
+  0% {
+    border-radius: 37% 29% 27% 27% / 28% 25% 41% 37%;
+  }
+
+  25% {
+    border-radius: 47% 29% 39% 49% / 61% 19% 66% 26%;
+  }
+
+  50% {
+    border-radius: 57% 23% 47% 72% / 63% 17% 66% 33%;
+  }
+
+  75% {
+    border-radius: 28% 49% 29% 100% / 93% 20% 64% 25%;
+  }
+
+  100% {
+    border-radius: 37% 29% 27% 27% / 28% 25% 41% 37%;
+  }
+}
+h2 {
+  color: #fff;
+}
+.statistics {
+  height: 80px;
+  padding: 8px 20px;
+  box-sizing: border-box;
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 200px;
+  margin-top: 60px;
+}
+.container .btn {
+  height: 50px;
+  margin: 20px;
+  margin-bottom: 40px;
+  position: relative;
+  width: 155px;
+}
+.container .btn a {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  box-shadow: 0 15px 35px rgba(255, 255, 255, 0.2);
+  color: #fff;
+  display: flex;
+  font-size: 18px;
+  font-weight: 700;
+  left: 0;
+  top: 0;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  letter-spacing: 1px;
+  text-decoration: none;
+  overflow: hidden;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(15px);
+  z-index: 1;
+  transition: 0.5s;
+}
+.container .btn:hover a {
+  letter-spacing: 2px;
+}
+.container .btn a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0.15), transparent);
+  transform: skewX(45deg) translateX(0);
+  transition: 0.5s;
+}
+.container .btn:hover a::before {
+  transform: skewX(45deg) translateX(200%);
+}
+.container .btn::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -5px;
+  height: 10px;
+  width: 30px;
+  background: rgb(8, 107, 183);
+  border-radius: 10px;
+  transition: 0.5s;
+  transition-delay: 0s;
+}
+.container .btn:hover::before {
+  bottom: 0;
+  height: 50%;
+  width: 80%;
+  border-radius: 30px;
+  transition-delay: 0.5s;
+}
+.container .btn::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -5px;
+  height: 10px;
+  width: 30px;
+  background: rgb(7, 95, 189);
+  border-radius: 10px;
+  transition: 0.5s;
+  transition-delay: 0s;
+}
+.container .btn:hover::after {
+  top: 0;
+  height: 50%;
+  width: 80%;
+  border-radius: 30px;
+  transition-delay: 0.5s;
+}
+.container .btn:nth-child(1):before,
+.container .btn:nth-child(1)::after {
+  background: var(--clr-1);
+  box-shadow: 0 0 5px var(--clr-1), 0 0 15px var(--clr-1), 0 0 30px var(--clr-1),
+    0 0 60px var(--clr-1);
+}
+.wrap {
+  width: 80%;
+  max-width: 1000px;
+}
+.widget {
+  width: 40%;
+  margin: 2em;
+}
+.widget p {
+  display: inline-block;
+  line-height: 1em;
+}
+.date {
+  text-align: center;
+  font-size: 1.5em;
+  margin-bottom: 0.3125rem;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  width: 230%;
+}
+.clock {
+  width: 230%;
+  padding: 20px;
+  font-size: 3em;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+}
+.clock .seconds-box {
+  display: inline-block;
+}
+.clock .seconds,
+.clock .ampm {
+  font-size: 1.2rem;
+  display: block;
+}

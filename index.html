@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <title>Juego de Memoria</title>
+  </head>
+  <body>
+    <div class="parent">
+      <div class="div1">
+        <div class="content">
+          <h1 class="title">
+            GAME MEMORY
+            <div class="aurora">
+              <div class="aurora__item"></div>
+              <div class="aurora__item"></div>
+              <div class="aurora__item"></div>
+              <div class="aurora__item"></div>
+            </div>
+          </h1>
+        </div>
+      </div>
+      <div class="div2">
+        <section class="section1">
+          <table>
+            <tr>
+              <td><button id="0" onclick="uncover(0)"></button></td>
+              <td><button id="1" onclick="uncover(1)"></button></td>
+              <td><button id="2" onclick="uncover(2)"></button></td>
+              <td><button id="3" onclick="uncover(3)"></button></td>
+            </tr>
+            <tr>
+              <td><button id="4" onclick="uncover(4)"></button></td>
+              <td><button id="5" onclick="uncover(5)"></button></td>
+              <td><button id="6" onclick="uncover(6)"></button></td>
+              <td><button id="7" onclick="uncover(7)"></button></td>
+            </tr>
+            <tr>
+              <td><button id="8" onclick="uncover(8)"></button></td>
+              <td><button id="9" onclick="uncover(9)"></button></td>
+              <td><button id="10" onclick="uncover(10)"></button></td>
+              <td><button id="11" onclick="uncover(11)"></button></td>
+            </tr>
+            <tr>
+              <td><button id="12" onclick="uncover(12)"></button></td>
+              <td><button id="13" onclick="uncover(13)"></button></td>
+              <td><button id="14" onclick="uncover(14)"></button></td>
+              <td><button id="15" onclick="uncover(15)"></button></td>
+            </tr>
+            <tr>
+              <td><button id="16" onclick="uncover(16)"></button></td>
+              <td><button id="17" onclick="uncover(17)"></button></td>
+              <td><button id="18" onclick="uncover(18)"></button></td>
+              <td><button id="19" onclick="uncover(19)"></button></td>
+            </tr>
+          </table>
+        </section>
+      </div>
+      <div class="div3">
+        <section class="section2">
+          <div class="box">
+            <!-- <span></span> -->
+            <div class="content">
+              <h2 id="hits" class="statistics">Hits: 0</h2>
+              <h2 id="time" class="statistics">Time: 60 seconds</h2>
+              <h2 id="movements" class="statistics">Movements: 0</h2>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div class="div4">
+        <div class="container">
+          <div id="reset-button" class="btn"><a href="#">Reset</a></div>
+        </div>
+      </div>
+      
+      <div class="div5">
+        <div class="wrap">
+          <div class="widget">
+            <div class="date">
+              <p id="weekday" class="weekday"></p>
+              <p id="day" class="day"></p>
+              <p>of</p>
+              <p id="month" class="month"></p>
+              <p>,</p>
+            <p id="year" class="year"></p>
+          </div>
+          <div class="clock">
+            <p id="hours" class="hours"></p>
+            <p>:</p>
+            <p id="minutes" class="minutes"></p>
+            <p>:</p>
+            <div class="seconds-box">
+              <p id="seconds" class="seconds"></p>
+              <p id="ampm" class="ampm"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
